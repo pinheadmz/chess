@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# v16 3.8.13
+
+CACHE:
+include/jquery-ui-1.8.21.custom.min.js
+include/jquery-1.7.2.min.js
+include/jquery.ui.touch-punch.min.js
+include/jquery.transit.min.js
+i/pieces2.png
+i/pieces.png
+i/ring.gif
+i/promote.gif
+i/splash.jpg
+js/chess.js
+js/bobby.js
+css/chess.css
+chess.html
+
+fonts/League-Gothic-fontfacekit/stylesheet.css
+fonts/League-Gothic-fontfacekit/League_Gothic-webfont.ttf

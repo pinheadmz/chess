@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<html>
+<head>
+<!-- 
+***************************************
+*  designed by MATTHEW ZIPKIN 2012    *
+* matthew(dot)zipkin(at)gmail(dot)com *
+***************************************
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Chess</title>
+	
+<link type="text/css" href="css/chess.css" rel="stylesheet" />
+<link type="text/css" href="fonts/League-Gothic-fontfacekit/stylesheet.css" rel="stylesheet" />
+
+
+<!-- jQuery and jQuery UI for draggables, effects and cookies -->
+<script type="text/javascript" src="include/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="include/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="include/jquery.transit.min.js"></script>
+<script type="text/javascript" src="include/jquery.ui.touch-punch.min.js"></script>
+
+<!-- application code -->
+<script type="text/javascript" src="js/chess.js"></script>
+<script type="text/javascript" src="js/bobby.js"></script>
+
+<!-- for mobile -->
+<meta id='VP' name='viewport' content='width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<script type="text/javascript">
+
+var VP = document.getElementById('VP');
+
+function resetZoom(){
+	switch (window.orientation){
+		case 0: case 180: // portrait
+			vpW = 780;
+			vpS = screen.width / vpW;
+			break;
+		case 90: case -90: // landscape
+			vpW = 1024;
+			vpS = screen.height / vpW;
+			break;
+		default:
+			vpW = 780;
+			vpS = screen.width / vpW;
+			break;
+	}
+	VP.setAttribute('content', 'width=' + vpW + ', user-scalable=no, initial-scale=' + vpS + ', minimum-scale=' + vpS + ', maximum-scale=' + vpS + '');
+	window.scrollTo(0,1);
+}
+
+window.onload = function(){resetZoom()};
+window.resize = function(){resetZoom();};
+window.onorientationchange = function(){resetZoom();};
+
+</script>
+<!-- end for mobile -->
+
+
+</head>
+<body>
+<div id="mainc">
+	<div id='panel'>
+		<div id='panelslider'>
+			<div id='start' class='panelcontent'>
+				<div id='message'><span style="font-size:80px;line-height:90px;">Chess!</span></div>
+				<div id='turn'>To Move:<br>
+					<div id='goc'>
+						<div id='gowhite' class='go'>White</div>
+						<div id='goblack' class='go'>Black</div>
+					</div>
+				</div>
+				<div id='storyc'>
+					<div id='story'>
+						<ul id='storylist'></ul>
+					</div>
+
+				</div>
+			</div>
+			<div id='promote' class='panelcontent'>
+				Promote:<br>
+					<div id='promo_0' class='promobutton'></div>
+					<div id='promo_1' class='promobutton'></div>
+					<div id='promo_2' class='promobutton'></div>
+					<div id='promo_3' class='promobutton'></div>
+			</div>	
+		</div>
+	</div>
+	<div id='board'>
+		<div id='inst'><br>
+			Play against computer?<br>
+			<div id='instYES' class='instButton'>YES</div>
+			<div id='instNO' class='instButton'>NO</div>
+			<div id='diff'><br>
+				<div id='diffEASY' class='instButton'>EASY</div>
+				<div id='diffHARD' class='instButton'>HARD</div>
+			</div>
+		</div>
+	
+		<div id='splash'>
+			<div id='splashLoading'>Loading...</div>
+			<img src='i/splash.jpg'>
+
+		</div>
+		<div id='glass'></div>
+		<div id='jail_0' class='jail'></div>
+		<div id='jail_1' class='jail'></div>
+	</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37930663-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
